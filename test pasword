@@ -1,0 +1,19 @@
+<?php
+
+$password = $_POST['password'];
+
+if (strlen($password) < 8) {
+    echo "faible";
+}
+
+elseif (preg_match("/^(?=.*\d).{8,}$/", $password)) {
+
+    if (preg_match("/^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{10,}$/", $password)) {
+        echo "fort";
+    } else {
+        echo "moyen";
+    }
+
+}
+
+?>
